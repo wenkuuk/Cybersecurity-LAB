@@ -242,5 +242,5 @@ main()
 
 This part shall be a verification of how the python file and docker file, showing that python runs in docker with output. 
 The docker uses certain commands:
-* “docker build. -f  INCS741Dockerfile(DOCKER FILE) –t 741assignemnt(FILENAME)”
-* “ docker run –it 741assignment.”
+* “docker build. -f  Dockerfile –t Secret”
+* “ docker run –it Secret .”
