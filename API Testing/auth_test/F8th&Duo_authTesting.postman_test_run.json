@@ -1,0 +1,306 @@
+{
+	"id": "d0c396f9-7516-4228-be71-a84da5661522",
+	"name": "F8th&Duo_authTesting",
+	"timestamp": "2022-12-15T16:22:02.836Z",
+	"collection_id": "21604555-d7e39948-6994-4df1-9bde-43b1b25a03fe",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 17,
+	"totalFail": 6,
+	"results": [
+		{
+			"id": "8a48651f-7a38-46ce-9293-98286857827f",
+			"name": "Duo Status Code Testing",
+			"url": "http://localhost/auth_test/authenSel.php",
+			"time": 554,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Duo Status code Testing": true
+			},
+			"testPassFailCounts": {
+				"Duo Status code Testing": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				554
+			],
+			"allTests": [
+				{
+					"Duo Status code Testing": true
+				}
+			]
+		},
+		{
+			"id": "295792a3-e7cc-4485-a5bb-7de80a371397",
+			"name": "Duo Response Header Testing",
+			"url": "http://localhost/auth_test/authenSel.php",
+			"time": 355,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Duo Verify Content-Type Header": true,
+				"Duo Verify Application Json Header": false
+			},
+			"testPassFailCounts": {
+				"Duo Verify Content-Type Header": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Duo Verify Application Json Header": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				355
+			],
+			"allTests": [
+				{
+					"Duo Verify Content-Type Header": true,
+					"Duo Verify Application Json Header": false
+				}
+			]
+		},
+		{
+			"id": "b004f4e7-f263-426c-ac1b-f2ceb30346be",
+			"name": "Duo Response Data",
+			"url": "http://localhost/auth_test/php/duo/verify_duo.php?username=stephen_duo",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Duo API Response within expected Time In Milliseconds": true,
+				"Duo Cookie Check": false,
+				"Duo Parsing Response Data": true,
+				"Duo Successfull Post Request": true,
+				"Duo Verify Response Json Data": false,
+				"Duo Response Data Type is string": true
+			},
+			"testPassFailCounts": {
+				"Duo API Response within expected Time In Milliseconds": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Duo Cookie Check": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Duo Parsing Response Data": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Duo Successfull Post Request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Duo Verify Response Json Data": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Duo Response Data Type is string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Duo API Response within expected Time In Milliseconds": true,
+					"Duo Cookie Check": false,
+					"Duo Parsing Response Data": true,
+					"Duo Successfull Post Request": true,
+					"Duo Verify Response Json Data": false,
+					"Duo Response Data Type is string": true
+				}
+			]
+		},
+		{
+			"id": "120e79c4-221d-4c65-a1a3-322695a09774",
+			"name": "F8th Status Code Testing",
+			"url": "http://localhost/auth_test/php/f8th/verify_f8th.php",
+			"time": 881,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"F8th Status code Testing": true
+			},
+			"testPassFailCounts": {
+				"F8th Status code Testing": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				881
+			],
+			"allTests": [
+				{
+					"F8th Status code Testing": true
+				}
+			]
+		},
+		{
+			"id": "262d46f7-24de-4b90-9b09-cd2be142bb68",
+			"name": "F8th Response Header Testing",
+			"url": "http://localhost/auth_test/php/f8th/verify_f8th.php",
+			"time": 689,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"F8th Verify Content-Type Header": true,
+				"F8th Verify Application Json Header": false
+			},
+			"testPassFailCounts": {
+				"F8th Verify Content-Type Header": {
+					"pass": 1,
+					"fail": 0
+				},
+				"F8th Verify Application Json Header": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				689
+			],
+			"allTests": [
+				{
+					"F8th Verify Content-Type Header": true,
+					"F8th Verify Application Json Header": false
+				}
+			]
+		},
+		{
+			"id": "54e5b3d9-20b7-47e1-bdc8-f44df01739d3",
+			"name": "F8th Response Data",
+			"url": "http://localhost/auth_test/php/f8th/verify_f8th.php?username=stephen",
+			"time": 787,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"F8th API Response within expected Time In Milliseconds": false,
+				"F8th Response Time": true,
+				"F8th Cookies Check": true,
+				"F8th Parsing Response Data": true,
+				"F8th Successfull Post Request": true,
+				"F8th Valid Response Data Body": true,
+				"F8th Test Response Data Structure": false,
+				"F8th Response Data is not empty ": true,
+				"F8th Response Data Type is string": true,
+				"F8th Response Data Contains Session ID and cdnURL": true,
+				"F8thResponse Data Contains Auth ID and Username ": true
+			},
+			"testPassFailCounts": {
+				"F8th API Response within expected Time In Milliseconds": {
+					"pass": 0,
+					"fail": 1
+				},
+				"F8th Response Time": {
+					"pass": 1,
+					"fail": 0
+				},
+				"F8th Cookies Check": {
+					"pass": 1,
+					"fail": 0
+				},
+				"F8th Parsing Response Data": {
+					"pass": 1,
+					"fail": 0
+				},
+				"F8th Successfull Post Request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"F8th Valid Response Data Body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"F8th Test Response Data Structure": {
+					"pass": 0,
+					"fail": 1
+				},
+				"F8th Response Data is not empty ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"F8th Response Data Type is string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"F8th Response Data Contains Session ID and cdnURL": {
+					"pass": 1,
+					"fail": 0
+				},
+				"F8thResponse Data Contains Auth ID and Username ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				787
+			],
+			"allTests": [
+				{
+					"F8th API Response within expected Time In Milliseconds": false,
+					"F8th Response Time": true,
+					"F8th Cookies Check": true,
+					"F8th Parsing Response Data": true,
+					"F8th Successfull Post Request": true,
+					"F8th Valid Response Data Body": true,
+					"F8th Test Response Data Structure": false,
+					"F8th Response Data is not empty ": true,
+					"F8th Response Data Type is string": true,
+					"F8th Response Data Contains Session ID and cdnURL": true,
+					"F8thResponse Data Contains Auth ID and Username ": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3271,
+	"collection": {
+		"requests": [
+			{
+				"id": "8a48651f-7a38-46ce-9293-98286857827f",
+				"method": "GET"
+			},
+			{
+				"id": "295792a3-e7cc-4485-a5bb-7de80a371397",
+				"method": "GET"
+			},
+			{
+				"id": "b004f4e7-f263-426c-ac1b-f2ceb30346be",
+				"method": "POST"
+			},
+			{
+				"id": "120e79c4-221d-4c65-a1a3-322695a09774",
+				"method": "GET"
+			},
+			{
+				"id": "262d46f7-24de-4b90-9b09-cd2be142bb68",
+				"method": "GET"
+			},
+			{
+				"id": "54e5b3d9-20b7-47e1-bdc8-f44df01739d3",
+				"method": "POST"
+			}
+		]
+	}
+}

@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "d7e39948-6994-4df1-9bde-43b1b25a03fe",
+		"name": "F8th&Duo_authTesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21604555"
+	},
+	"item": [
+		{
+			"name": "Duo Status Code Testing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Duo Status code Testing\", () =>{",
+							"  pm.expect(pm.response.code).to.be.oneOf([201,202,200,304,400,401,403,404,409,410,500]);",
+							"});",
+							"//Testing the common status code in one of the set []"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/auth_test/authenSel.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth_test",
+						"authenSel.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Duo Response Header Testing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Duo Verify Content-Type Header\", () => {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"    //case-insensitive regular expression with i flag",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^text\\/html/i);",
+							"});",
+							"pm.test(\"Duo Verify Application Json Header\", () => {",
+							" pm.response.to.have.header(\"Content-Type\", \"/^application/json/i; charset=utf-8\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/auth_test/authenSel.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth_test",
+						"authenSel.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Duo Response Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Duo API Response within expected Time In Milliseconds\", () => {",
+							"  const expectedTimeInMilliseconds = 255;",
+							"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+							"    expectedTimeInMilliseconds + 1,",
+							"  );",
+							"});",
+							"pm.test(\"Duo Cookie Check\", () => {",
+							"    pm.expect(pm.cookies.has('sessionId')).to.be.true;",
+							"});",
+							"",
+							"pm.test(\"Duo Parsing Response Data\", () => {",
+							"    const responseText = pm.response.text();",
+							"    console.log(responseText);",
+							"});",
+							"pm.test(\"Duo Successfull Post Request\", () => {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,202]);",
+							"});",
+							"",
+							"pm.test(\"Duo Verify Response Json Data\", function () {",
+							"    pm.response.to.not.be.error;",
+							"    pm.response.to.have.jsonBody(\"\");",
+							"    pm.response.to.not.have.jsonBody(\"error\");",
+							"});",
+							"",
+							"pm.test(\"Duo Response Data Type is string\", function () {",
+							"  const $ = cheerio.load(pm.response.text());",
+							"  console.log($.html());",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "ausNEUJkifQY1ANlWNCNXBWYCYvBcvnm9qRdGS16",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "DIG37XKJEFGL9J3E0QNS",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/auth_test/php/duo/verify_duo.php?username={{duo_username}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth_test",
+						"php",
+						"duo",
+						"verify_duo.php"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "{{duo_username}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "F8th Status Code Testing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"F8th Status code Testing\", () =>{",
+							"  pm.expect(pm.response.code).to.be.oneOf([201,202,200,304,400,401,403,404,409,410,500]);",
+							"});",
+							"//Testing the common status code in one of the set []"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/auth_test/php/f8th/verify_f8th.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth_test",
+						"php",
+						"f8th",
+						"verify_f8th.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "F8th Response Header Testing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"F8th Verify Content-Type Header\", () => {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"    //case-insensitive regular expression with i flag",
+							"    pm.expect(pm.response.headers.get('content-type')).match(/^text\\/html/i);",
+							"});",
+							"pm.test(\"F8th Verify Application Json Header\", () => {",
+							" pm.response.to.have.header(\"Content-Type\", \"/^application/json/i; charset=utf-8\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/auth_test/php/f8th/verify_f8th.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth_test",
+						"php",
+						"f8th",
+						"verify_f8th.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "F8th Response Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"F8th API Response within expected Time In Milliseconds\", () => {",
+							"  const expectedTimeInMilliseconds = 255;",
+							"  pm.expect(pm.response.responseTime).to.be.lessThan(",
+							"    expectedTimeInMilliseconds + 1,",
+							"  );",
+							"});",
+							"pm.test(\"F8th Response Time\", () => {",
+							"    pm.response.responseTime;",
+							"});",
+							"",
+							"pm.test(\"F8th Cookies Check\", () => {",
+							"    pm.expect(pm.cookies.has('PHPSESSID')).to.be.true;",
+							"});",
+							"",
+							"pm.test(\"F8th Parsing Response Data\", () => {",
+							"    const responseText = pm.response.text();",
+							"    console.log(responseText);",
+							"});",
+							"pm.test(\"F8th Successfull Post Request\", () => {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,202]);",
+							"});",
+							"",
+							"pm.test(\"F8th Valid Response Data Body\", function () {",
+							"     pm.expect(pm.response.text()).to.be.ok;",
+							"",
+							"});",
+							"pm.test(\"F8th Test Response Data Structure\", () => {",
+							"  const textData = pm.response.text();  ",
+							"  pm.expect(textData).to.be.an(\"string\");",
+							"  pm.expect(pm.response.text()).to.include(\"stephen\");",
+							"  // check if there is any url is sent",
+							"  pm.expect(textData.website).to.be.undefined;",
+							"  ",
+							"});",
+							"pm.test(\"F8th Response Data is not empty \", function () {",
+							"     pm.expect(pm.response.text()).to.not.equal(null)",
+							"});",
+							"",
+							"pm.test(\"F8th Response Data Type is string\", function () {",
+							"  const $ = cheerio.load(pm.response.text());",
+							"  console.log($.html());",
+							"  ",
+							"});",
+							"pm.test(\"F8th Response Data Contains Session ID and cdnURL\",() => {",
+							"  pm.expect(pm.response.text()).to.include(\"Session ID\");",
+							"  pm.expect(pm.response.text()).to.include(\"cdnUrl\");",
+							"});",
+							"pm.test(\"F8thResponse Data Contains Auth ID and Username \",() => {",
+							"  pm.expect(pm.response.text()).to.include(\"auth\");",
+							"  pm.expect(pm.response.text()).to.include(\"username\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/auth_test/php/f8th/verify_f8th.php?username=stephen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth_test",
+						"php",
+						"f8th",
+						"verify_f8th.php"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "stephen"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "duo-API-HOST",
+			"value": "api-87a1e92c.duosecurity.com"
+		},
+		{
+			"key": "duo_username",
+			"value": "stephen_duo"
+		}
+	]
+}
