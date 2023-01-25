@@ -1,1 +1,1 @@
-# Cybersecurity-LAB
+# Cybersecurity Collection
