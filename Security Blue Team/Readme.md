@@ -1,4 +1,4 @@
-This covers writeup from BTLO, Letsdend, CyberDefenders Blue Team Training platform.
+##Get hands dirty from BTLO, Letsdend, CyberDefenders Blue Team Training platform.
 
 BTLO: https://blueteamlabs.online/home
 
